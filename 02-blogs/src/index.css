@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@layer components {
+	.section-div {
+		@apply bg-white p-4 rounded-lg shadow mt-8;
+	}
+
+	.h3-base {
+		@apply font-semibold text-lg mb-4;
+	}
+
+	.inputElement {
+		@apply block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400/50;
+	}
+}

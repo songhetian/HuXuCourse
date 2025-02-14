@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+
+@layer base {
+	.border {
+		border-width: 1px;
+		border-color: gainsboro;
+	}
+}
