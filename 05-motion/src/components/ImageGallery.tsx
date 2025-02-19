@@ -1,3 +1,4 @@
+import { div } from 'framer-motion/client';
 import { motion } from 'motion/react';
 const images = [
 	{
@@ -13,8 +14,37 @@ const images = [
 		caption: 'Caption for Image 3'
 	}
 ];
+const buttonVariants = {
+	s1: { x: 100, y: 100 }
+};
 const ImageGallery = () => {
-	return <motion.div>ImageGallery</motion.div>;
+	return (
+		// <div className="perspective-[1000px] ">
+		// 	<div className="transform-3d">
+		// 		<div className="w-64 h-64 bg-blue-600/50  rotate-x-100"></div>
+		// 	</div>
+		// </div>
+
+		// <motion.div className=" relative">
+		// 	<motion.button
+		// 		className="px-4 py-2 bg-blue-300 rounded-2xl shadow-white"
+		// 		variants={buttonVariants}
+		// 		// initial="s1"
+		// 		whileTap={{ scale: 1.5 }}
+		// 		// whileHover={'s1'}
+		// 		animate={{ scale: [1, 2, 1] }}
+		// 		transition={{
+		// 			duration: 1,
+		// 			repeat: Infinity,
+		// 			ease: 'easeInOut',
+		// 			delay: 5
+		// 		}}
+		// 	>
+		// 		Click Me!
+		// 	</motion.button>
+		// </motion.div>
+		<motion.div></motion.div>
+	);
 };
 
 export default ImageGallery;
