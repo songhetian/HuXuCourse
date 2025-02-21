@@ -12,6 +12,7 @@ const ScrollCarousel = () => {
 	const x = useTransform(scrollYProgress, [0, 1], ['1%', '-99%']);
 	return (
 		<div className="relative h-[300vh] bg-neutral-900 " ref={targetRef}>
+			<div className="px-2 py-4"></div>
 			<div className="sticky top-0 flex h-screen items-center overflow-hidden">
 				<motion.div className="flex gap-4" style={{ x }}>
 					{cards.map((card, index) => (
