@@ -5,6 +5,8 @@
 
 @config '../tailwind.config.js';
 
+@plugin "tailwindcss-animate";
+
 * {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
