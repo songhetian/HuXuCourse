@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Button from './components/Button';
+import Loader from './components/Loader';
+import PageWide from './components/PageWide';
+import Shared from './components/Shared';
+import { motion, useScroll, useTransform } from 'motion/react';
+import Stagger from './components/Stagger';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+	const { scrollYProgress } = useScroll();
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+	const width = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
-export default App
+	return (
+		<div className="h-[300vh]">
+			<motion.div
+				className="h-2 bg-red-500 fixed inset-0"
+				transition={{ duration: 1 }}
+				style={{ width }}
+			></motion.div>
+			<h1 className="text-3xl">Button</h1>
+			<Button />
+			<h1 className="text-3xl">Loader</h1>
+			<Loader />
+			<h1 className="text-3xl">PageWide</h1>
+			<PageWide />
+			<h1 className="text-3xl">Shred</h1>
+			<Shared />
+			<h1 className="text-3xl">Stagger</h1>
+			<Stagger />
+		</div>
+	);
+};
+
+export default App;

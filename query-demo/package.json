@@ -1,5 +1,5 @@
 {
-  "name": "db-demo",
+  "name": "query-demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,13 +11,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
-    "gsap": "^3.12.7",
-    "motion": "^12.4.7",
+    "@tanstack/react-query": "^5.67.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-intersection-observer": "^9.15.1",
-    "tailwindcss": "^4.0.9",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss": "^4.0.9"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
