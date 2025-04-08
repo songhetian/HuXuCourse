@@ -1,1 +1,7 @@
 @import 'tailwindcss';
+
+@layer components {
+	.card {
+		@apply bg-white h-100 w-100 shadow rounded-2xl flex items-center justify-center;
+	}
+}

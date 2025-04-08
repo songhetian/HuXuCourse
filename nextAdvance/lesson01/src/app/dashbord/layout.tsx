@@ -8,13 +8,10 @@ type LayoutProps = {
 
 const Layout = ({ children, team, comments }: LayoutProps) => {
 	return (
-		<div>
-			<div>{children}</div>
-			<h1>这是第二部分</h1>
-			<div className="flex flex-col">
-				<div>{team}</div>
-				<div>{comments}</div>
-			</div>
+		<div className="bg-gray-100 w-full h-screen flex flex-col  items-center justify-between ">
+			<div className="card h-1/10 w-full">{children}</div>
+			<div className="card h-7/10 w-full">{team}</div>
+			<div className="card h-1/10 w-full">{comments}</div>
 		</div>
 	);
 };

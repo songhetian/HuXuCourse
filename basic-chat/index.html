@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Chat App</title>
+    </head>
+    <style>
+
+    </style>
+
+    <body>
+        <ul id="message"></ul>
+        <form action="" id="form">
+            <input type="text" id="input" autocomplete="off" />
+            <button class="btn">Send</button>
+        </form>
+    </body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        // socket.emit('message', '我是一条服务器的消息');
+
+        const btn = document.querySelector('.btn');
+        const input = document.querySelector('#input');
+        const list = document.querySelector('#message');
+
+        btn.addEventListener('click', (event) => {
+            event.preventDefault();
+            const message = input.value;
+            socket.emit('message', message);
+            const li = document.createElement('li');
+            li.textContent = message;
+            list.append(li);
+        });
+
+        socket.on('ServerMessage', (message) => {
+            const li = document.createElement('li');
+            li.textContent = message;
+            list.append(li);
+        });
+    </script>
+
+</html>
